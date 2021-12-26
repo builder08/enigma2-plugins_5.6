@@ -25,7 +25,7 @@ from Components.Sources.Source import Source
 from Components.WeatherMSN import weathermsn
 
 import six
-SIGN = '°' if six.PY3 else str('\xc2\xb0')
+SIGN = 'Â°' if six.PY3 else str('\xc2\xb0')
 
 
 class MSNWeather(Source):
