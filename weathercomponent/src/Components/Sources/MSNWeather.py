@@ -69,7 +69,7 @@ class MSNWeather(Source):
 			highTemp = item.high
 			return "%s%s%s" % (highTemp, SIGN, weathermsn.weatherData.degreetype)
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getTemperature_Low(self, key):
 		skey = str(key)
@@ -80,7 +80,7 @@ class MSNWeather(Source):
 			lowTemp = item.low
 			return "%s%s%s" % (lowTemp, SIGN, weathermsn.weatherData.degreetype)
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getTemperature_Heigh_Low(self, key):
 		skey = str(key)
@@ -93,7 +93,7 @@ class MSNWeather(Source):
 			low = self.getTemperature_Low(key)
 			return "%s - %s" % (high, low)
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getTemperature_Text(self, key):
 		skey = str(key)
@@ -104,35 +104,35 @@ class MSNWeather(Source):
 			else:
 				return item.skytextday
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getTemperature_Current(self):
 		skey = "-1"
 		if skey in weathermsn.weatherData.weatherItems:
 			return "%s%s%s" % (weathermsn.weatherData.weatherItems[skey].temperature, SIGN, weathermsn.weatherData.degreetype)
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getFeelslike(self):
 		skey = "-1"
 		if skey in weathermsn.weatherData.weatherItems:
 			return weathermsn.weatherData.weatherItems[skey].feelslike
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getHumidity(self):
 		skey = "-1"
 		if skey in weathermsn.weatherData.weatherItems:
 			return weathermsn.weatherData.weatherItems[skey].humidity
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getWinddisplay(self):
 		skey = "-1"
 		if skey in weathermsn.weatherData.weatherItems:
 			return weathermsn.weatherData.weatherItems[skey].winddisplay
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getWeekday(self, key, short):
 		skey = str(key)
@@ -145,7 +145,7 @@ class MSNWeather(Source):
 			else:
 				return item.day
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getDate(self, key):
 		skey = str(key)
@@ -156,7 +156,7 @@ class MSNWeather(Source):
 			c = time.strptime(item.date, "%Y-%m-%d")
 			return time.strftime("%d. %b", c)
 		else:
-			return _("n/a")
+			return _(" ")
 
 	def getWeatherIconFilename(self, key):
 		if str(key) in weathermsn.weatherData.weatherItems:
